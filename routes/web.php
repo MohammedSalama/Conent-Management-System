@@ -46,7 +46,7 @@ Route::get('/admin_dashboard', function () {
      */
     Route::get('admin_dashboard/categories',[CategoryController::class,'index'])->name('categories');
     Route::post('admin_dashboard/categories/store',[CategoryController::class,'store'])->name('categories.store');
-    Route::post('admin_dashboard/categories/destroy',[CategoryController::class,'destroy'])->name('categories.destroy');
+    Route::post('admin_dashboard/categories/destroy/{category}',[CategoryController::class,'destroy'])->name('categories.destroy');
     Route::post('admin_dashboard/categories/{id}',[CategoryController::class,'update'])->name('categories.update');
 // });
 

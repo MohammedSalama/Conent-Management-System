@@ -26,18 +26,16 @@
                     </div>
                     <br>
 
-                    {{-- <div class="col">
-                        <label> Category </label>
-
-                        <select name="category_id">
-                            @foreach($category as $category)
-                            <option value="{{$category->id}}"> {{$category->name}}</option>
-                            @endforeach
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Category</label>
+                        <select class="form-control" name="category_id" id="category">
+                         
+                         @foreach ($category as $category)
+                         <option value="{{$category->id}}" >{{$category->name}}</option>
+                         @endforeach
+                           
                         </select>
-                        @error('category_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div> --}}
+                      </div>
 
                     <div class="col">
                         <label> Description </label>

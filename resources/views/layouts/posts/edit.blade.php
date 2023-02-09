@@ -14,66 +14,45 @@
                    @method('POST')
                    @csrf
                    {{--Input hidden id--}}
-                   <input type="hidden" name="id" value="{{$posts->id}}"/>
+                   <input type="hidden" name="id" value="{{$contacts->id}}"/>
 
-                   <div class="row">
-
-                       <div class="col">
-                           <label> First Name </label>
-                           <input type="text" name="first_name" class="form-control">
-                           {{ $contacts -> first_name }}
-                       </div>
-
-                   </div>
+                    <div class="col">
+                        <label> Title </label>
+                        <input type="text" name="title" class="form-control">
+                        @error('title')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
                    <br>
 
-                   <div class="row">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Category</label>
+                        <select class="form-control" name="category_id" id="category">
+                        
+                        @foreach ($category as $category)
+                        <option value="{{$category->id}}" >{{$category->name}}</option>
+                        @endforeach
+                        
+                        </select>
+                    </div>
 
-                       <div class="col">
-                           <label> Last Name </label>
-                           <input type="text" name="last_name" class="form-control">
-                           {{ $contacts -> last_name }}
-                       </div>
 
-                   </div>
+                    <div class="col">
+                        <label> Description </label>
+                        <textarea class="form-control" name="content"
+                            id="content" rows="8" cols="8"></textarea>
+                            @error('content')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                    </div>
 
-                   {{-- <div class="col">
-                       <label> Company </label>
-
-                       <select name="company_id">
-                           @foreach($company as $company)
-                               <option value="{{$company->id}}" {{$company->id == $contacts->company_id ? 'selected' : ''}}>
-                                   {{$company->name}} </option>
-                           @endforeach
-                       </select>
-                       @error('company_id')
-                       <div class="alert alert-danger">{{ $message }}</div>
-                       @enderror
-                   </div> --}}
-
-                   <div class="row">
-                       <div class="col">
-                           <label> E-mail </label>
-                           <input type="email" name="email" class="form-control">
-                           {{ $contacts -> email }}
-                       </div>
-                   </div>
-
-                   <div class="row">
-                       <div class="col">
-                           <label> Phone </label>
-                           <input type="text" name="phone" class="form-control">
-                           {{ $contacts -> phone }}
-                       </div>
-                   </div>
-
-                   <div class="row">
-                       <div class="col">
-                           <label> LinkedIn Profile </label>
-                           <input type="text" name="url" class="form-control">
-                           {{ $contacts -> url }}
-                       </div>
-                   </div>
+                    <div class="col">
+                        <label for="featured">Photo</label>
+                        <input type="file" class="form-control-file" name="featured">
+                        @error('featured')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
                    <div class="modal-footer">
                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

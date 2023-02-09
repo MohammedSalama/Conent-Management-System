@@ -41,7 +41,7 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Photo</th>
-                                {{-- <th></th> --}}
+                                <th>Category name</th>
                                 <th>Processes</th>
                             </tr>
                             </thead>
@@ -51,7 +51,7 @@
                                     <td>{{ $loop -> iteration }}</td>
                                     <td>{{ $posts -> title }}</td>
                                     <td>{{ $posts -> content }}</td>
-                                    {{-- <td>{{ $posts -> category -> name}}</td> --}}
+                                    <td>{{ $posts -> category -> name}}</td>
                                     <td>{{ $posts -> featured }}</td>
                                     <td>
                                         <button class="btn btn-danger btn-sm" data-post_id="{{$posts->id}}"

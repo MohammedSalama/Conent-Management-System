@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('layouts.posts.create');
+        return view('layouts.posts.create',compact('category'));
     }
 
     /**
@@ -39,11 +39,12 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        dd($request->all());
+        // dd($request->all());
         try {
             Post::create([
                 'title' => $request->title,
                 'content' => $request->content,
+                'category_id' => $request->category_id,
                 'featured' => $request->featured
             ]);
             session()->flash('Add', __('Post Added Successfully') );

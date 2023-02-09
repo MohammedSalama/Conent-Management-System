@@ -5,7 +5,7 @@
        <!-- menu item Dashboard-->
        <li>
          <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard">
-           <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">Reload</span></div>
+           <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">CMS</span></div>
            <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
          </a>
          <ul id="dashboard" class="collapse" data-parent="#sidebarnav">

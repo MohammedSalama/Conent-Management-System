@@ -52,12 +52,13 @@
                                         <button class="btn btn-danger btn-sm" data-category_id="{{$category->id}}"
                                                 data-toggle="modal" data-target="#deletedcategory"><i
                                                 class="fa fa-trash"></i></button>
-
+                                        
+                                                
                                         <button class="btn btn-success btn-sm" title="Edit" data-toggle="modal"
                                                 data-target="#Editcategory{{$category->id}}" ><i
                                                 class="fa fa-edit"></i></button>
 
-                                        @include('layouts.category.deleted')
+                                        @include('layouts.category.deleted',['idhjhj' => $category->id] )
 
                                         @include('layouts.category.edit')
 
@@ -83,7 +84,8 @@
     <script>
         $('#deletedcategory').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)
-            var category_id = button.data('category_id')
+            var category_id = $('#category_id').val();
+            console.log('category_id');
             var modal = $(this)
             modal.find('.modal-body #category_id').val(category_id);
         })

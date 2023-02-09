@@ -9,7 +9,7 @@
                 </button>
             </div>
 {{--            @include('message')--}}
-            <form action="{{route('categories.destroy','test')}}" method="POST">
+            <form action="{{route('categories.destroy',$idhjhj)}}" method="POST">
                 @csrf
                 @method('POST')
                 <div class="modal-body">
@@ -26,3 +26,8 @@
         </div>
     </div>
 </div>
+
+<script>
+    $x = document.getElementById('category_id').value;
+    console.log($x);
+</script>
